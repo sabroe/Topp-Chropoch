@@ -1,0 +1,4 @@
+rootProject.name = 'Yelstream Topp Chropoch Project'
+
+include 'Topp-Chropoch-Clock-Assembling-Library'
+include 'Topp-Chropoch-Time-Management-Library'
