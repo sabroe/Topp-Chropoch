@@ -1,5 +1,5 @@
 # Topp Chropoch
-Java library addressing the control of the timeline as seen from application code.
+Java libraries addressing the control of the timeline as seen from application code.
 
 Control the timeline as seen from your application code.
 Accelerated feedback at, say 24x or 48x normal speed.
