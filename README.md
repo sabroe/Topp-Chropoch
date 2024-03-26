@@ -1,5 +1,5 @@
-# <span style="font-size:larger;">Topp Chropoch</span> <span style="font-size:smaller;">// Yelstream v/Morten Sabroe Mortensen</span>
-Java libraries addressing the control of the timeline as seen from application code.
+# Topp Chropoch // Yelstream v/Morten Sabroe Mortensen
+Control of the timeline as seen from application code.
 
 
 ## Introduction
