@@ -4,6 +4,6 @@
 module com.yelstream.topp.chropoch.core {
     requires static lombok;
     requires org.slf4j;
-    exports com.yelstream.topp.chropoch.lang;
+    requires com.yelstream.topp.standard.core;
     exports com.yelstream.topp.chropoch.time;
 }

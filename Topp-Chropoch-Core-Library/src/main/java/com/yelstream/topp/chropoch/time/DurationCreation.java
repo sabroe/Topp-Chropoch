@@ -1,6 +1,6 @@
 package com.yelstream.topp.chropoch.time;
 
-import com.yelstream.topp.chropoch.lang.Comparables;
+import com.yelstream.topp.standard.lang.Comparables;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 
