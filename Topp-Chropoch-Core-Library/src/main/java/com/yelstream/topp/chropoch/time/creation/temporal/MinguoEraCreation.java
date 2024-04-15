@@ -7,9 +7,10 @@ import java.time.Clock;
 import java.time.ZoneId;
 import java.time.chrono.MinguoDate;
 import java.time.chrono.MinguoEra;
+import java.util.function.Supplier;
 
 /**
- *
+ * Creator of {@link MinguoEra} instances.
  *
  * @author Morten Sabroe Mortensen
  * @version 1.0
@@ -17,13 +18,18 @@ import java.time.chrono.MinguoEra;
  */
 @AllArgsConstructor(staticName="of",access=AccessLevel.PACKAGE)
 public class MinguoEraCreation {
-    private final Clock clock;
+    /**
+     * Clock source.
+     */
+    private final Supplier<Clock> clockSupplier;
 
     public MinguoEra now() {
+        Clock clock=clockSupplier.get();
         return MinguoDate.now(clock).getEra();
     }
 
     public MinguoEra now(ZoneId zone) {
+        Clock clock=clockSupplier.get();
         return MinguoDate.now(clock.withZone(zone)).getEra();
     }
 }

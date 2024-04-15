@@ -3,6 +3,7 @@ package com.yelstream.topp.chropoch.time.creation.temporal;
 import lombok.AllArgsConstructor;
 
 import java.time.Clock;
+import java.util.function.Supplier;
 
 /**
  *
@@ -11,95 +12,100 @@ import java.time.Clock;
  * @version 1.0
  * @since 2024-02-18
  */
+@SuppressWarnings({"java:S6539","unused"})
 @AllArgsConstructor(staticName="of")
-public class TemporalAccessorCreation {  //TO-DO: Consider relationship between TemporalAccessorCreation and TemporalCreation; Temporal inherits TemporalAccessor!
+public class TemporalAccessorCreation {
     private final Clock clock;
 
+    private Supplier<Clock> getClockSupplier() {
+        return ()->clock;  //TO-DO: Consider this; is static to begin with!
+    }
+
     public DayOfWeekCreation dayOfWeek() {  //TO-DO: Consider the existence of this!
-        return DayOfWeekCreation.of(clock);
+        return DayOfWeekCreation.of(getClockSupplier());
     }
 
     public HijrahDateCreation hijrahDate() {
-        return HijrahDateCreation.of(clock);
+        return HijrahDateCreation.of(getClockSupplier());
     }
 
     public HijrahEraCreation hijrahEra() {  //TO-DO: Consider the existence of this!
-        return HijrahEraCreation.of(clock);
+        return HijrahEraCreation.of(getClockSupplier());
     }
 
     public InstantCreation instant() {
-        return InstantCreation.of(clock);
+        return InstantCreation.of(getClockSupplier());
     }
 
     public IsoEraCreation isoEra() {  //TO-DO: Consider the existence of this!
-        return IsoEraCreation.of(clock);
+        return IsoEraCreation.of(getClockSupplier());
     }
 
     public JapaneseDateCreation japaneseDate() {
-        return JapaneseDateCreation.of(clock);
+        return JapaneseDateCreation.of(getClockSupplier());
     }
 
     public JapaneseEraCreation japaneseEra() {  //TO-DO: Consider the existence of this!
-        return JapaneseEraCreation.of(clock);
+        return JapaneseEraCreation.of(getClockSupplier());
     }
 
     public LocalDateCreation localDate() {
-        return LocalDateCreation.of(clock);
+        return LocalDateCreation.of(getClockSupplier());
     }
 
     public LocalDateTimeCreation localDateTime() {
-        return LocalDateTimeCreation.of(clock);
+        return LocalDateTimeCreation.of(getClockSupplier());
     }
 
     public LocalTimeCreation localTime() {
-        return LocalTimeCreation.of(clock);
+        return LocalTimeCreation.of(getClockSupplier());
     }
 
     public MinguoDateCreation minguoDate() {
-        return MinguoDateCreation.of(clock);
+        return MinguoDateCreation.of(getClockSupplier());
     }
 
     public MinguoEraCreation minguoEra() {  //TO-DO: Consider the existence of this!
-        return MinguoEraCreation.of(clock);
+        return MinguoEraCreation.of(getClockSupplier());
     }
 
     public MonthCreation month() {  //TO-DO: Consider the existence of this!
-        return MonthCreation.of(clock);
+        return MonthCreation.of(getClockSupplier());
     }
 
     public MonthDayCreation monthDay() {
-        return MonthDayCreation.of(clock);
+        return MonthDayCreation.of(getClockSupplier());
     }
 
     public OffsetDateTimeCreation offsetDateTime() {
-        return OffsetDateTimeCreation.of(clock);
+        return OffsetDateTimeCreation.of(getClockSupplier());
     }
 
     public OffsetTimeCreation offsetTime() {
-        return OffsetTimeCreation.of(clock);
+        return OffsetTimeCreation.of(getClockSupplier());
     }
 
     public ThaiBuddhistDateCreation thaiBuddhistDate() {
-        return ThaiBuddhistDateCreation.of(clock);
+        return ThaiBuddhistDateCreation.of(getClockSupplier());
     }
 
     public ThaiBuddhistEraCreation thaiBuddhistEra() {  //TO-DO: Consider the existence of this!
-        return ThaiBuddhistEraCreation.of(clock);
+        return ThaiBuddhistEraCreation.of(getClockSupplier());
     }
 
     public YearCreation year() {
-        return YearCreation.of(clock);
+        return YearCreation.of(getClockSupplier());
     }
 
     public YearMonthCreation yearMonth() {
-        return YearMonthCreation.of(clock);
+        return YearMonthCreation.of(getClockSupplier());
     }
 
     public ZonedDateTimeCreation zonedDateTime() {
-        return ZonedDateTimeCreation.of(clock);
+        return ZonedDateTimeCreation.of(getClockSupplier());
     }
 
     public ZoneOffsetCreation zoneOffset() {  //TO-DO: Consider the existence of this!
-        return ZoneOffsetCreation.of(clock);
+        return ZoneOffsetCreation.of(getClockSupplier());
     }
 }

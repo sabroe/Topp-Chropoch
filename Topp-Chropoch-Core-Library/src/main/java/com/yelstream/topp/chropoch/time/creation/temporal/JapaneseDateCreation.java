@@ -6,9 +6,10 @@ import lombok.AllArgsConstructor;
 import java.time.Clock;
 import java.time.ZoneId;
 import java.time.chrono.JapaneseDate;
+import java.util.function.Supplier;
 
 /**
- *
+ * Creator of {@link JapaneseDate} instances.
  *
  * @author Morten Sabroe Mortensen
  * @version 1.0
@@ -16,13 +17,18 @@ import java.time.chrono.JapaneseDate;
  */
 @AllArgsConstructor(staticName="of",access=AccessLevel.PACKAGE)
 public class JapaneseDateCreation {
-    private final Clock clock;
+    /**
+     * Clock source.
+     */
+    private final Supplier<Clock> clockSupplier;
 
     public JapaneseDate now() {
+        Clock clock=clockSupplier.get();
         return JapaneseDate.now(clock);
     }
 
     public JapaneseDate now(ZoneId zone) {
+        Clock clock=clockSupplier.get();
         return JapaneseDate.now(clock.withZone(zone));
     }
 }

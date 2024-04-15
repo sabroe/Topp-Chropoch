@@ -6,9 +6,10 @@ import lombok.AllArgsConstructor;
 import java.time.Clock;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.function.Supplier;
 
 /**
- *
+ * Creator of {@link LocalDateTime} instances.
  *
  * @author Morten Sabroe Mortensen
  * @version 1.0
@@ -16,13 +17,18 @@ import java.time.ZoneId;
  */
 @AllArgsConstructor(staticName="of",access=AccessLevel.PACKAGE)
 public class LocalDateTimeCreation {
-    private final Clock clock;
+    /**
+     * Clock source.
+     */
+    private final Supplier<Clock> clockSupplier;
 
     public LocalDateTime now() {
+        Clock clock=clockSupplier.get();
         return LocalDateTime.now(clock);
     }
 
     public LocalDateTime now(ZoneId zone) {
+        Clock clock=clockSupplier.get();
         return LocalDateTime.now(clock.withZone(zone));
     }
 }

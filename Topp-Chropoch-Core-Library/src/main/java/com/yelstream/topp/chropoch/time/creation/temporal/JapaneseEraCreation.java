@@ -7,9 +7,10 @@ import java.time.Clock;
 import java.time.ZoneId;
 import java.time.chrono.JapaneseDate;
 import java.time.chrono.JapaneseEra;
+import java.util.function.Supplier;
 
 /**
- *
+ * Creator of {@link JapaneseEra} instances.
  *
  * @author Morten Sabroe Mortensen
  * @version 1.0
@@ -17,13 +18,18 @@ import java.time.chrono.JapaneseEra;
  */
 @AllArgsConstructor(staticName="of",access=AccessLevel.PACKAGE)
 public class JapaneseEraCreation {
-    private final Clock clock;
+    /**
+     * Clock source.
+     */
+    private final Supplier<Clock> clockSupplier;
 
     public JapaneseEra now() {
+        Clock clock=clockSupplier.get();
         return JapaneseDate.now(clock).getEra();
     }
 
     public JapaneseEra now(ZoneId zone) {
+        Clock clock=clockSupplier.get();
         return JapaneseDate.now(clock.withZone(zone)).getEra();
     }
 }

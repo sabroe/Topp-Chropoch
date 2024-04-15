@@ -7,9 +7,10 @@ import java.time.Clock;
 import java.time.ZoneId;
 import java.time.chrono.HijrahDate;
 import java.time.chrono.HijrahEra;
+import java.util.function.Supplier;
 
 /**
- *
+ * Creator of {@link HijrahEra} instances.
  *
  * @author Morten Sabroe Mortensen
  * @version 1.0
@@ -17,13 +18,18 @@ import java.time.chrono.HijrahEra;
  */
 @AllArgsConstructor(staticName="of",access=AccessLevel.PACKAGE)
 public class HijrahEraCreation {
-    private final Clock clock;
+    /**
+     * Clock source.
+     */
+    private final Supplier<Clock> clockSupplier;
 
     public HijrahEra now() {
+        Clock clock=clockSupplier.get();
         return HijrahDate.now(clock).getEra();
     }
 
     public HijrahEra now(ZoneId zone) {
+        Clock clock=clockSupplier.get();
         return HijrahDate.now(clock.withZone(zone)).getEra();
     }
 }

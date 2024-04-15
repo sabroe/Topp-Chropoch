@@ -7,9 +7,10 @@ import java.time.Clock;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZoneOffset;
+import java.util.function.Supplier;
 
 /**
- *
+ * Creator of {@link ZoneOffset} instances.
  *
  * @author Morten Sabroe Mortensen
  * @version 1.0
@@ -17,13 +18,18 @@ import java.time.ZoneOffset;
  */
 @AllArgsConstructor(staticName="of",access=AccessLevel.PACKAGE)
 public class ZoneOffsetCreation {
-    private final Clock clock;
+    /**
+     * Clock source.
+     */
+    private final Supplier<Clock> clockSupplier;
 
     public ZoneOffset now() {
+        Clock clock=clockSupplier.get();
         return clock.getZone().getRules().getOffset(Instant.now(clock));
     }
 
     public ZoneOffset now(ZoneId zone) {
+        Clock clock=clockSupplier.get();
         return clock.getZone().getRules().getOffset(Instant.now(clock.withZone(zone)));
     }
 }

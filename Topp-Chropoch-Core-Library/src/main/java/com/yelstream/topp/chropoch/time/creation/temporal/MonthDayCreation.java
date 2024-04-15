@@ -6,9 +6,10 @@ import lombok.AllArgsConstructor;
 import java.time.Clock;
 import java.time.MonthDay;
 import java.time.ZoneId;
+import java.util.function.Supplier;
 
 /**
- *
+ * Creator of {@link MonthDay} instances.
  *
  * @author Morten Sabroe Mortensen
  * @version 1.0
@@ -16,13 +17,18 @@ import java.time.ZoneId;
  */
 @AllArgsConstructor(staticName="of",access=AccessLevel.PACKAGE)
 public class MonthDayCreation {
-    private final Clock clock;
+    /**
+     * Clock source.
+     */
+    private final Supplier<Clock> clockSupplier;
 
     public MonthDay now() {
+        Clock clock=clockSupplier.get();
         return MonthDay.now(clock);
     }
 
     public MonthDay now(ZoneId zone) {
+        Clock clock=clockSupplier.get();
         return MonthDay.now(clock.withZone(zone));
     }
 }

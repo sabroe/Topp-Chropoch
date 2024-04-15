@@ -6,9 +6,10 @@ import lombok.AllArgsConstructor;
 import java.time.Clock;
 import java.time.ZoneId;
 import java.time.chrono.ThaiBuddhistDate;
+import java.util.function.Supplier;
 
 /**
- *
+ * Creator of {@link ThaiBuddhistDate} instances.
  *
  * @author Morten Sabroe Mortensen
  * @version 1.0
@@ -16,13 +17,18 @@ import java.time.chrono.ThaiBuddhistDate;
  */
 @AllArgsConstructor(staticName="of",access=AccessLevel.PACKAGE)
 public class ThaiBuddhistDateCreation {
-    private final Clock clock;
+    /**
+     * Clock source.
+     */
+    private final Supplier<Clock> clockSupplier;
 
     public ThaiBuddhistDate now() {
+        Clock clock=clockSupplier.get();
         return ThaiBuddhistDate.now(clock);
     }
 
     public ThaiBuddhistDate now(ZoneId zone) {
+        Clock clock=clockSupplier.get();
         return ThaiBuddhistDate.now(clock.withZone(zone));
     }
 }

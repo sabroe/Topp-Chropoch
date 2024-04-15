@@ -6,9 +6,10 @@ import lombok.AllArgsConstructor;
 import java.time.Clock;
 import java.time.OffsetDateTime;
 import java.time.ZoneId;
+import java.util.function.Supplier;
 
 /**
- *
+ * Creator of {@link OffsetDateTime} instances.
  *
  * @author Morten Sabroe Mortensen
  * @version 1.0
@@ -16,13 +17,18 @@ import java.time.ZoneId;
  */
 @AllArgsConstructor(staticName="of",access=AccessLevel.PACKAGE)
 public class OffsetDateTimeCreation {
-    private final Clock clock;
+    /**
+     * Clock source.
+     */
+    private final Supplier<Clock> clockSupplier;
 
     public OffsetDateTime now() {
+        Clock clock=clockSupplier.get();
         return OffsetDateTime.now(clock);
     }
 
     public OffsetDateTime now(ZoneId zone) {
+        Clock clock=clockSupplier.get();
         return OffsetDateTime.now(clock.withZone(zone));
     }
 }
