@@ -12,8 +12,12 @@ import java.time.Clock;
  * @since 2024-02-18
  */
 @AllArgsConstructor(staticName="of")
-public class TemporalCreation {
+public class TemporalCreation {  //TO-DO: Consider relationship between TemporalAccessorCreation and TemporalCreation; Temporal inherits TemporalAccessor!
     private final Clock clock;
+
+    public InstantCreation instant() {
+        return InstantCreation.of(clock);
+    }
 
     public LocalDateCreation localDate() {
         return LocalDateCreation.of(clock);

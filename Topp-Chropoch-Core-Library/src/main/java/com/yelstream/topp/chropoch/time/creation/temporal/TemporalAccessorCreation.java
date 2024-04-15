@@ -12,12 +12,16 @@ import java.time.Clock;
  * @since 2024-02-18
  */
 @AllArgsConstructor(staticName="of")
-public class TemporalAccessorCreation {
+public class TemporalAccessorCreation {  //TO-DO: Consider relationship between TemporalAccessorCreation and TemporalCreation; Temporal inherits TemporalAccessor!
     private final Clock clock;
+
+    //DayOfWeek?
 
     public InstantCreation instant() {
         return InstantCreation.of(clock);
     }
+
+    //IsoEra?
 
     public LocalDateCreation localDate() {
         return LocalDateCreation.of(clock);
@@ -30,6 +34,8 @@ public class TemporalAccessorCreation {
     public LocalTimeCreation localTime() {
         return LocalTimeCreation.of(clock);
     }
+
+    //Month?
 
     public MonthDayCreation monthDay() {
         return MonthDayCreation.of(clock);
@@ -54,4 +60,6 @@ public class TemporalAccessorCreation {
     public ZonedDateTimeCreation zonedDateTime() {
         return ZonedDateTimeCreation.of(clock);
     }
+
+    //ZoneOffset?
 }
