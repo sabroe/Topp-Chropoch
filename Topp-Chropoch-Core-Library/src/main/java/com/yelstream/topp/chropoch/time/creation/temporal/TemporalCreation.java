@@ -15,8 +15,16 @@ import java.time.Clock;
 public class TemporalCreation {  //TO-DO: Consider relationship between TemporalAccessorCreation and TemporalCreation; Temporal inherits TemporalAccessor!
     private final Clock clock;
 
+    public HijrahDateCreation hijrahDate() {
+        return HijrahDateCreation.of(clock);
+    }
+
     public InstantCreation instant() {
         return InstantCreation.of(clock);
+    }
+
+    public JapaneseDateCreation japaneseDate() {
+        return JapaneseDateCreation.of(clock);
     }
 
     public LocalDateCreation localDate() {
@@ -31,12 +39,20 @@ public class TemporalCreation {  //TO-DO: Consider relationship between Temporal
         return LocalTimeCreation.of(clock);
     }
 
+    public MinguoDateCreation minguoDate() {
+        return MinguoDateCreation.of(clock);
+    }
+
     public OffsetDateTimeCreation offsetDateTime() {
         return OffsetDateTimeCreation.of(clock);
     }
 
     public OffsetTimeCreation offsetTime() {
         return OffsetTimeCreation.of(clock);
+    }
+
+    public ThaiBuddhistDateCreation thaiBuddhistDate() {
+        return ThaiBuddhistDateCreation.of(clock);
     }
 
     public YearCreation year() {

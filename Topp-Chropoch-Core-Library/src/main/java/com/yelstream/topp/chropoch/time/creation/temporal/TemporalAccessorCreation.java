@@ -15,13 +15,33 @@ import java.time.Clock;
 public class TemporalAccessorCreation {  //TO-DO: Consider relationship between TemporalAccessorCreation and TemporalCreation; Temporal inherits TemporalAccessor!
     private final Clock clock;
 
-    //DayOfWeek?
+    public DayOfWeekCreation dayOfWeek() {  //TO-DO: Consider the existence of this!
+        return DayOfWeekCreation.of(clock);
+    }
+
+    public HijrahDateCreation hijrahDate() {
+        return HijrahDateCreation.of(clock);
+    }
+
+    public HijrahEraCreation hijrahEra() {  //TO-DO: Consider the existence of this!
+        return HijrahEraCreation.of(clock);
+    }
 
     public InstantCreation instant() {
         return InstantCreation.of(clock);
     }
 
-    //IsoEra?
+    public IsoEraCreation isoEra() {  //TO-DO: Consider the existence of this!
+        return IsoEraCreation.of(clock);
+    }
+
+    public JapaneseDateCreation japaneseDate() {
+        return JapaneseDateCreation.of(clock);
+    }
+
+    public JapaneseEraCreation japaneseEra() {  //TO-DO: Consider the existence of this!
+        return JapaneseEraCreation.of(clock);
+    }
 
     public LocalDateCreation localDate() {
         return LocalDateCreation.of(clock);
@@ -35,7 +55,17 @@ public class TemporalAccessorCreation {  //TO-DO: Consider relationship between 
         return LocalTimeCreation.of(clock);
     }
 
-    //Month?
+    public MinguoDateCreation minguoDate() {
+        return MinguoDateCreation.of(clock);
+    }
+
+    public MinguoEraCreation minguoEra() {  //TO-DO: Consider the existence of this!
+        return MinguoEraCreation.of(clock);
+    }
+
+    public MonthCreation month() {  //TO-DO: Consider the existence of this!
+        return MonthCreation.of(clock);
+    }
 
     public MonthDayCreation monthDay() {
         return MonthDayCreation.of(clock);
@@ -47,6 +77,14 @@ public class TemporalAccessorCreation {  //TO-DO: Consider relationship between 
 
     public OffsetTimeCreation offsetTime() {
         return OffsetTimeCreation.of(clock);
+    }
+
+    public ThaiBuddhistDateCreation thaiBuddhistDate() {
+        return ThaiBuddhistDateCreation.of(clock);
+    }
+
+    public ThaiBuddhistEraCreation thaiBuddhistEra() {  //TO-DO: Consider the existence of this!
+        return ThaiBuddhistEraCreation.of(clock);
     }
 
     public YearCreation year() {
@@ -61,5 +99,7 @@ public class TemporalAccessorCreation {  //TO-DO: Consider relationship between 
         return ZonedDateTimeCreation.of(clock);
     }
 
-    //ZoneOffset?
+    public ZoneOffsetCreation zoneOffset() {  //TO-DO: Consider the existence of this!
+        return ZoneOffsetCreation.of(clock);
+    }
 }
