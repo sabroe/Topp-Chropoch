@@ -108,4 +108,8 @@ public class TemporalAccessorCreation {
     public ZoneOffsetCreation zoneOffset() {  //TO-DO: Consider the existence of this!
         return ZoneOffsetCreation.of(getClockSupplier());
     }
+
+    public static TemporalAccessorCreation of() {  //TO-DO: Find 'Clock' instance implicitly!?
+        throw new IllegalStateException("Not implemented ... Yet!");
+    }
 }
