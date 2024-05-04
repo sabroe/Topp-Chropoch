@@ -6,7 +6,7 @@ import java.time.Clock;
 import java.util.function.Supplier;
 
 /**
- *
+ * Main source of {@link java.time.temporal.TemporalAccessor} instances.
  *
  * @author Morten Sabroe Mortensen
  * @version 1.0
@@ -15,10 +15,13 @@ import java.util.function.Supplier;
 @SuppressWarnings({"java:S6539","unused"})
 @AllArgsConstructor(staticName="of")
 public class TemporalAccessorCreation {
-    private final Clock clock;
+    /**
+     * Clock source.
+     */
+    private final Supplier<Clock> clockSupplier;
 
     private Supplier<Clock> getClockSupplier() {
-        return ()->clock;  //TO-DO: Consider this; is static to begin with!
+        return clockSupplier;
     }
 
     public DayOfWeekCreation dayOfWeek() {  //TO-DO: Consider the existence of this!
@@ -109,7 +112,7 @@ public class TemporalAccessorCreation {
         return ZoneOffsetCreation.of(getClockSupplier());
     }
 
-    public static TemporalAccessorCreation of() {  //TO-DO: Find 'Clock' instance implicitly!?
-        throw new IllegalStateException("Not implemented ... Yet!");
+    public static TemporalAccessorCreation of(Clock clock) {
+        return of (()->clock);
     }
 }

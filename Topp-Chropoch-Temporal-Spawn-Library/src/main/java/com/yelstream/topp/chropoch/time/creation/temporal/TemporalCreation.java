@@ -6,7 +6,7 @@ import java.time.Clock;
 import java.util.function.Supplier;
 
 /**
- *
+ * Main source of {@link java.time.temporal.Temporal} instances.
  *
  * @author Morten Sabroe Mortensen
  * @version 1.0
@@ -15,10 +15,13 @@ import java.util.function.Supplier;
 @SuppressWarnings({"unused"})
 @AllArgsConstructor(staticName="of")
 public class TemporalCreation {
-    private final Clock clock;
+    /**
+     * Clock source.
+     */
+    private final Supplier<Clock> clockSupplier;
 
     private Supplier<Clock> getClockSupplier() {
-        return ()->clock;  //TO-DO: Consider this; is static to begin with!
+        return clockSupplier;
     }
 
     public HijrahDateCreation hijrahDate() {
@@ -73,7 +76,7 @@ public class TemporalCreation {
         return ZonedDateTimeCreation.of(getClockSupplier());
     }
 
-    public static TemporalCreation of() {  //TO-DO: Find 'Clock' instance implicitly!?
-        throw new IllegalStateException("Not implemented ... Yet!");
+    public static TemporalCreation of(Clock clock) {
+        return of (()->clock);
     }
 }
