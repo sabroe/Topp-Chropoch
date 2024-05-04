@@ -1,5 +1,6 @@
 rootProject.name = 'Yelstream Topp Chropoch Project'
 
 include 'Topp-Chropoch-Core-Library'
-//include 'Topp-Chropoch-Create-Library'
+include 'Topp-Chropoch-Clock-Shape-Library'
+include 'Topp-Chropoch-Temporal-Spawn-Library'
 include 'Topp-Chropoch-Inject-Library'
