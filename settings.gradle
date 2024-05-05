@@ -1,6 +1,87 @@
 rootProject.name = 'Yelstream Topp Chropoch Project'
 
-include 'Topp-Chropoch-Core-Library'
+include 'Topp-Chropoch-Core-Library'  //Consider this!
 include 'Topp-Chropoch-Clock-Shape-Library'
 include 'Topp-Chropoch-Temporal-Spawn-Library'
+include 'Topp-Chropoch-Chronicle-Library'
+include 'Topp-Chropoch-Temporal-Core-Library'
+include 'Topp-Chropoch-Temporal-Config-Library'
 include 'Topp-Chropoch-Inject-Library'
+
+
+/*
+Operationelt:
+-- ClockProvider, Clock
+-- DelayProvider, Delay
+-- TemporalCreation, TemporalAccessorCreation
+-- DelayManager -- business-processing
+-- DelayManager -- den fysiske verden, connect-timeout, xxx
+
+
+Metadata:
+-- Beskrivelse af t
+-- XXX
+
+
+
+ClockProvider -> Clock -> e.g. Instant
+TimerProvider -> Timer -> Delay, which has a Duration
+
+
+Delay
+-- Duration
+-- Human time vs. physical time
+-- Use
+
+
+Injected:
+-- XXX
+-- XXX
+-- XXX
+
+
+interface TemporalController {  <- Possibly injected!
+    ClockProvider getClockProvider();
+    TimerProvider getTimerProvider();
+}
+
+interface Chronicle {
+    TemporalController controller();
+    Clock clock();
+    Timer timer();
+    TemporalCreation temporal();
+    DelayCreation delay();
+    // Other convenient methods for time-related operations
+    DurationWatch?
+}
+
+ínterface TemporalConfiguration {
+
+}
+
+
+interface TemporalController {
+    ClockProvider getClockProvider();
+    TimerProvider getTimerProvider();
+    TemporalConfigurationProvider getConfigurationProvider();
+}
+
+
+interface TemporalAssociation {
+    TemporalConfiguration getTemporalConfiguration();
+    TemporalController getTemporalController();
+}
+
+
+interface TemporalAssociationRegistry {
+    void registerAssociation(TemporalController controller, TemporalConfiguration configuration);
+    TemporalConfiguration getConfigurationForController(TemporalController controller);
+    // Other methods for managing associations
+}
+
+interface Chronometer {
+    ClockProvider getClockProvider();
+    TimerProvider getTimerProvider();
+    // Other methods for managing time-related operations
+}
+ */
