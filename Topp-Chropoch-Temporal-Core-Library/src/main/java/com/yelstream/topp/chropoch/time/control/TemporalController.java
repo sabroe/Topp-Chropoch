@@ -9,7 +9,7 @@ import java.time.Clock;
 public interface TemporalController {  //Chronometer?
     ClockProvider getClockProvider();
 
-    TimerProvider getTimerProvider();  //TimerProvider? SchedProvider? SchedulerProvider?
+    TimerProvider getTimerProvider();
 
     default Clock getClock() {
         return getClockProvider().getClock();

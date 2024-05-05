@@ -1,6 +1,7 @@
 package com.yelstream.topp.chropoch.time.provider;
 
 import java.time.Clock;
+import java.time.ZoneId;
 import java.util.function.Supplier;
 
 /**
@@ -20,5 +21,17 @@ public interface ClockProvider {
 
     default Supplier<Clock> supplier() {
         return this::getClock;
+    }
+
+    static ClockProvider systemDefaultZone() {  //TO-DO: Consider the presence of this!
+        return Clock::systemDefaultZone;
+    }
+
+    static ClockProvider system(ZoneId zone) {  //TO-DO: Consider the presence of this!
+        return ()->Clock.system(zone);
+    }
+
+    static ClockProvider systemUTC() {  //TO-DO: Consider the presence of this!
+        return Clock::systemUTC;
     }
 }
