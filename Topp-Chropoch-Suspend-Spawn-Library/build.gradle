@@ -12,8 +12,6 @@ dependencies {
 
     api 'com.yelstream.topp.standard:topp-standard-core:0.0.8'
     api project(':Topp-Chropoch-Temporal-Core-Library')
-    api project(':Topp-Chropoch-Temporal-Spawn-Library')
-    api project(':Topp-Chropoch-Suspend-Spawn-Library')
 
     testImplementation 'org.slf4j:slf4j-simple:2.0.12'
 }

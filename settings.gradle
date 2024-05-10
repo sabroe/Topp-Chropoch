@@ -3,6 +3,7 @@ rootProject.name = 'Yelstream Topp Chropoch Project'
 include 'Topp-Chropoch-Core-Library'  //Consider this!
 include 'Topp-Chropoch-Clock-Shape-Library'
 include 'Topp-Chropoch-Temporal-Spawn-Library'
+include 'Topp-Chropoch-Suspend-Spawn-Library'
 include 'Topp-Chropoch-Chronicle-Library'
 include 'Topp-Chropoch-Temporal-Core-Library'
 include 'Topp-Chropoch-Temporal-Config-Library'

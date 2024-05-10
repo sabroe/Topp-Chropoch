@@ -7,6 +7,7 @@ module com.yelstream.topp.chropoch.chronicle {
     requires com.yelstream.topp.standard.core;
     requires com.yelstream.topp.chropoch.temporal.core;
     requires com.yelstream.topp.chropoch.temporal.spawn;
+    requires com.yelstream.topp.chropoch.suspend.spawn;
 //    exports com.yelstream.topp.chropoch.time;
 //    exports com.yelstream.topp.chropoch.time.use;
     exports com.yelstream.topp.chropoch.time.chronicle;

@@ -30,7 +30,24 @@ public interface Timer {
      */
     Duration adjust(Duration duration);
 
+    /**
+     * Transforms a duration from a source timeline to a target timeline.
+     * @param nanos Duration relative to the source timeline.
+     *              Unit is nanoseconds.
+     *              This can hold up to in the order of 292 years.
+     * @return Duration relative to the target timeline.
+     *         Unit is nanoseconds.
+     *         This can hold up to in the order of 292 years.
+     */
+    default long adjustNano(long nanos) {
+        return adjust(Duration.ofNanos(nanos)).toNanos();
+    }
+
+    /**
+     * Gets the identity timer
+     * @return Identity timer.
+     */
     static Timer identity() {
-        return UnaryOperator.<Duration>identity()::apply;
+        return UnaryOperator.<Duration>identity()::apply;  //TO-DO: Consider this; map both methods to ensure an identity operation!
     }
 }
