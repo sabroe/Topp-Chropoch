@@ -1,6 +1,7 @@
 package com.yelstream.topp.chropoch.time.provider;
 
 import java.time.Duration;
+import java.util.function.LongUnaryOperator;
 import java.util.function.UnaryOperator;
 
 /**
@@ -43,11 +44,45 @@ public interface Timer {
         return adjust(Duration.ofNanos(nanos)).toNanos();
     }
 
+    default UnaryOperator<Duration> toDurationOperator() {
+        return this::adjust;
+    }
+
+    default LongUnaryOperator toNanoOperator() {
+        return this::adjustNano;
+    }
+
+    private static Timer of(UnaryOperator<Duration> durationTransformation,
+                            LongUnaryOperator nanoDurationTransformation) {
+        return new Timer() {
+            @Override
+            public Duration adjust(Duration duration) {
+                return durationTransformation.apply(duration);
+            }
+
+            @Override
+            public long adjustNano(long nanos) {
+                return nanoDurationTransformation.applyAsLong(nanos);
+            }
+        };
+    }
+
+    static Timer of(UnaryOperator<Duration> transformation) {
+        return of(transformation,
+                nanos->transformation.apply(Duration.ofNanos(nanos)).toNanos());
+    }
+
+    static Timer of(LongUnaryOperator transformation) {
+        return of(duration->Duration.ofNanos(transformation.applyAsLong(duration.toNanos())),
+                  transformation);
+    }
+
     /**
      * Gets the identity timer
      * @return Identity timer.
      */
     static Timer identity() {
-        return UnaryOperator.<Duration>identity()::apply;  //TO-DO: Consider this; map both methods to ensure an identity operation!
+        return of(UnaryOperator.identity(),
+                  LongUnaryOperator.identity());
     }
 }
