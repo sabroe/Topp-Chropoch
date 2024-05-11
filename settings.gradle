@@ -5,9 +5,10 @@ include 'Topp-Chropoch-Clock-Shape-Library'
 include 'Topp-Chropoch-Temporal-Spawn-Library'
 include 'Topp-Chropoch-Suspend-Spawn-Library'
 include 'Topp-Chropoch-Chronicle-Library'
-include 'Topp-Chropoch-Temporal-Core-Library'
+include 'Topp-Chropoch-Time-Source-Library'
 include 'Topp-Chropoch-Temporal-Config-Library'
 include 'Topp-Chropoch-Inject-Library'
+//include 'Topp-Chropoch-Duration-Watch-Library'  //TO-DO: Consider adding this!
 
 
 /*

@@ -11,7 +11,7 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.32'
 
     api 'com.yelstream.topp.standard:topp-standard-core:0.0.8'
-    api project(':Topp-Chropoch-Temporal-Core-Library')
+    api project(':Topp-Chropoch-Time-Source-Library')
     api project(':Topp-Chropoch-Temporal-Spawn-Library')
     api project(':Topp-Chropoch-Suspend-Spawn-Library')
 

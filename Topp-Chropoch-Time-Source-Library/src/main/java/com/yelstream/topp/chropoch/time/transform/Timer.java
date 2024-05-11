@@ -1,4 +1,4 @@
-package com.yelstream.topp.chropoch.time.provider;
+package com.yelstream.topp.chropoch.time.transform;
 
 import java.time.Duration;
 import java.util.function.LongUnaryOperator;

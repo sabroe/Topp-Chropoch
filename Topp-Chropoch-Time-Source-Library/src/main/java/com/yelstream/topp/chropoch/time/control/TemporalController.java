@@ -1,7 +1,7 @@
 package com.yelstream.topp.chropoch.time.control;
 
 import com.yelstream.topp.chropoch.time.provider.ClockProvider;
-import com.yelstream.topp.chropoch.time.provider.Timer;
+import com.yelstream.topp.chropoch.time.transform.Timer;
 import com.yelstream.topp.chropoch.time.provider.TimerProvider;
 
 import java.time.Clock;

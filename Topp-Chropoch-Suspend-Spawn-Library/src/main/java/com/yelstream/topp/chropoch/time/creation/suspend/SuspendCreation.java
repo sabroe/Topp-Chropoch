@@ -1,6 +1,6 @@
 package com.yelstream.topp.chropoch.time.creation.suspend;
 
-import com.yelstream.topp.chropoch.time.provider.Timer;
+import com.yelstream.topp.chropoch.time.transform.Timer;
 import lombok.AllArgsConstructor;
 
 import java.util.function.Supplier;

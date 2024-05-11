@@ -1,5 +1,7 @@
 package com.yelstream.topp.chropoch.time.provider;
 
+import com.yelstream.topp.chropoch.time.transform.Timer;
+
 import java.util.function.Supplier;
 
 /**
@@ -19,5 +21,13 @@ public interface TimerProvider {
 
     default Supplier<Timer> supplier() {
         return this::getTimer;
+    }
+
+    static TimerProvider of(Timer timer) {
+        return ()->timer;
+    }
+
+    static TimerProvider of(Supplier<Timer> timerSupplier) {
+        return timerSupplier::get;
     }
 }

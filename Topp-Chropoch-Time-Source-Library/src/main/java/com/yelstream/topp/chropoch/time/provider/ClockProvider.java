@@ -23,6 +23,14 @@ public interface ClockProvider {
         return this::getClock;
     }
 
+    static ClockProvider of(Clock clock) {
+        return ()->clock;
+    }
+
+    static ClockProvider of(Supplier<Clock> clockSupplier) {
+        return clockSupplier::get;
+    }
+
     static ClockProvider systemDefaultZone() {  //TO-DO: Consider the presence of this!
         return Clock::systemDefaultZone;
     }

@@ -7,4 +7,5 @@ module com.yelstream.topp.chropoch.temporal.core {
     requires com.yelstream.topp.standard.core;
     exports com.yelstream.topp.chropoch.time.provider;
     exports com.yelstream.topp.chropoch.time.control;
+    exports com.yelstream.topp.chropoch.time.transform;
 }

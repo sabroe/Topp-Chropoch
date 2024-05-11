@@ -8,7 +8,9 @@
  *     Grab hold of one of these objects:
  * </p>
  * <ol>
- *     <li>{@link com.yelstream.topp.chropoch.time.creation.temporal.TemporalAccessorCreation#of(com.yelstream.topp.chropoch.time.provider.Timer)}</li>
+ *     <li>{@link com.yelstream.topp.chropoch.time.creation.temporal.TemporalAccessorCreation#of(Timer)}</li>
  * </ol>
  */
 package com.yelstream.topp.chropoch.time.creation.suspend;
+
+import com.yelstream.topp.chropoch.time.transform.Timer;
