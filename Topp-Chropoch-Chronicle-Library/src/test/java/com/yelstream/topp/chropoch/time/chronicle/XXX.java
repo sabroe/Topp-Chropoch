@@ -1,9 +1,10 @@
 package com.yelstream.topp.chropoch.time.chronicle;
 
-import com.yelstream.topp.chropoch.time.chronicle.op.AwaitExOp;
-import com.yelstream.topp.chropoch.time.chronicle.op.AwaitOp;
-import com.yelstream.topp.chropoch.time.chronicle.op.BooleanAwaitOp;
-import com.yelstream.topp.chropoch.time.chronicle.util.Await;
+import com.yelstream.topp.chropoch.time.creation.suspend.DelayCreation;
+import com.yelstream.topp.chropoch.time.op.AwaitExOp;
+import com.yelstream.topp.chropoch.time.op.BooleanAwaitOp;
+import com.yelstream.topp.chropoch.time.op.util.SleepOps;
+import com.yelstream.topp.chropoch.time.util.Await;
 import lombok.AllArgsConstructor;
 
 import java.time.Duration;
@@ -67,7 +68,47 @@ public class XXX {
         CompletableFuture<String> cf=null;
         AwaitExOp<String,Exception> a=()->cf.get(1L, TimeUnit.MINUTES);
 
-        ;
+        SleepOps.S1 _u1=Thread::sleep;
+        Duration d=Duration.ZERO;
 
+        {  //WANTED FORMATS!
+            {
+                chronicle.suspend().delay().duration(d).build().op(_u1).delay();
+
+                chronicle.delay().fixed().duration(d).op().delay();
+                chronicle.delay().fixed().duration(d).op(_u1).delay();
+
+                chronicle.suspend().sleep(Duration.ZERO);
+                chronicle.suspend().sleep(0L);
+                chronicle.suspend().sleep(0L,0);
+
+                chronicle.suspend().delay().sleep(Duration.ZERO);
+                chronicle.suspend().delay().sleep(0L);
+                chronicle.suspend().delay().sleep(0L,0);
+
+                chronicle.suspend().delay().fixed().duration(Duration.ZERO).op().delay();
+                chronicle.suspend().delay().fixed().duration(0L).op().delay();
+                chronicle.suspend().delay().fixed().duration(0L,0).op().delay();
+
+                Thread t=new Thread();
+                chronicle.suspend().join(t,Duration.ZERO);
+                chronicle.suspend().join(t,0L);
+                chronicle.suspend().join(t,0L,0);
+
+                chronicle.suspend().delay().varying().duration(Duration.ZERO).apply();
+                chronicle.suspend().delay().varying().duration(0L).apply();
+                chronicle.suspend().delay().varying().duration(0L,0).apply();
+
+
+                chronicle.suspend().delay().duration(Duration.ZERO).target().build().apply();
+                chronicle.suspend().delay().duration(0L).target().build().apply();
+                chronicle.suspend().delay().duration(0L,0).target().build().apply();
+
+
+            }
+        }
+
+
+        chronicle.suspend().await(d);//.join();
     }
 }

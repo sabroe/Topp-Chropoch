@@ -1,4 +1,4 @@
-package com.yelstream.topp.chropoch.time.chronicle.op;
+package com.yelstream.topp.chropoch.time.op;
 
 import java.time.Duration;
 

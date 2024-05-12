@@ -4,6 +4,7 @@ import com.yelstream.topp.chropoch.time.transform.Timer;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 
+import java.time.Duration;
 import java.util.function.Supplier;
 
 /**
@@ -20,9 +21,16 @@ public class AwaitCreation {
      */
     private final Supplier<Timer> timerSupplier;
 
-    private Supplier<Timer> getTimerSupplier() {
-        return timerSupplier;
+    /**
+     * Maximum await duration.
+     */
+//    private final Duration duration;
+
+/*
+    public DelayCreation duration(Duration duration) {
+        return DelayCreation.of(timerSupplier,duration);
     }
+*/
 
 
 }

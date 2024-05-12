@@ -7,4 +7,6 @@ module com.yelstream.topp.chropoch.suspend.spawn {
     requires com.yelstream.topp.chropoch.temporal.core;
 //    requires com.yelstream.topp.standard.core;
     exports com.yelstream.topp.chropoch.time.creation.suspend;
+    exports com.yelstream.topp.chropoch.time.op;
+    exports com.yelstream.topp.chropoch.time.op.util;
 }
