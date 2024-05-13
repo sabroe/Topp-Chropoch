@@ -29,7 +29,6 @@ public class DelayCreation {
         return VaryingDelayCreation.Builder.create(timerSupplier);
     }
 
-
     public void sleep(long millis) throws InterruptedException {
         Duration duration=Duration.ofMillis(millis);
         Duration adjustedDuration=timerSupplier.get().adjust(duration);

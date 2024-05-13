@@ -69,4 +69,28 @@ public class SuspendCreation {
 
 
 
+
+    public void join(Thread thread) throws InterruptedException {
+        await().join(thread);
+    }
+
+    public boolean join(Thread thread,
+                        long millis) throws InterruptedException {
+        return await().join(thread,millis);
+    }
+
+    public boolean join(Thread thread,
+                        long millis,
+                        int nanos) throws InterruptedException {
+        return await().join(thread,millis,nanos);
+    }
+
+    public boolean join(Thread thread,
+                        Duration duration) throws InterruptedException {
+        return await().join(thread,duration);
+    }
+
+
+
+
 }

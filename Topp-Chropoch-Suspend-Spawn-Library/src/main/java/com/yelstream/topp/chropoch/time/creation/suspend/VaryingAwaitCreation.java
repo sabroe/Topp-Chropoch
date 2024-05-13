@@ -1,5 +1,6 @@
 package com.yelstream.topp.chropoch.time.creation.suspend;
 
+
 import com.yelstream.topp.chropoch.time.op.DelayOp;
 import com.yelstream.topp.chropoch.time.op.util.SleepOps;
 import com.yelstream.topp.chropoch.time.transform.Timer;
@@ -12,7 +13,7 @@ import java.time.Duration;
 import java.util.function.Supplier;
 
 /**
- * Source of delay operations with a varying delay duration.
+ * Source of await operations with a varying delay duration.
  *
  * @author Morten Sabroe Mortensen
  * @version 1.0
@@ -21,7 +22,7 @@ import java.util.function.Supplier;
 @SuppressWarnings("java:S1117")
 @lombok.Builder(builderClassName="Builder",toBuilder=true)
 @AllArgsConstructor(staticName="of",access=AccessLevel.PACKAGE)
-public class VaryingDelayCreation {
+public class VaryingAwaitCreation {
     /**
      * Timer source.
      */
@@ -31,11 +32,6 @@ public class VaryingDelayCreation {
      * Delay duration.
      */
     private final Duration duration;
-
-
-
-
-
 
 
     public DelayOp op() {
@@ -70,7 +66,6 @@ public class VaryingDelayCreation {
         };
     }
 
-
     public static class Builder {
         @Setter(AccessLevel.PRIVATE)
         @Getter(AccessLevel.PRIVATE)
@@ -83,7 +78,7 @@ public class VaryingDelayCreation {
         }
 
         public DelayOp op() {
-            VaryingDelayCreation creator=this.build();
+            VaryingAwaitCreation creator=this.build();
             return creator.op();
         }
     }
