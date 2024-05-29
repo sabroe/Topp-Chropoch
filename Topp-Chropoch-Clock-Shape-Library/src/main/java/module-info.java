@@ -18,7 +18,7 @@
  */
 
 /**
- * Chropoch core.
+ * Topp Chropoch Clock Shape creates clock instances in different configurations.
  */
 module com.yelstream.topp.chropoch.clock.shape {
     requires static lombok;

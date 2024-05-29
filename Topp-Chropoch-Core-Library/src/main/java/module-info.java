@@ -18,7 +18,7 @@
  */
 
 /**
- * Chropoch core.
+ * Topp Chropoch Core contains, as of now, incubating functionalities.
  */
 module com.yelstream.topp.chropoch.core {
     requires static lombok;

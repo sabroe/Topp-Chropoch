@@ -18,7 +18,7 @@
  */
 
 /**
- * Chropoch core.
+ * Topp Chropoch Suspend Spawn maintains suspended execution in the form of delays and await-operations.
  */
 module com.yelstream.topp.chropoch.suspend.spawn {
     requires static lombok;

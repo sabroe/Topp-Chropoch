@@ -18,7 +18,7 @@
  */
 
 /**
- * Chropoch core.
+ * Topp Chropoch Time Source defines the progress of time.
  */
 module com.yelstream.topp.chropoch.temporal.core {
     requires static lombok;

@@ -18,7 +18,7 @@
  */
 
 /**
- * Chropoch core.
+ * Topp Chropoch Temporal Config provides options for persistable configuration.
  */
 module com.yelstream.topp.chropoch.temporal.config {
     requires static lombok;

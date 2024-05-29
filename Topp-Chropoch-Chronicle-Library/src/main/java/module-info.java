@@ -18,7 +18,7 @@
  */
 
 /**
- * Chropoch core.
+ * Topp Chropoch Chronicle is the main front towards end-applications.
  */
 module com.yelstream.topp.chropoch.chronicle {
     requires static lombok;

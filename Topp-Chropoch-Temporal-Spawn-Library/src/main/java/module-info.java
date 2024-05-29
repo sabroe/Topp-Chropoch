@@ -18,7 +18,7 @@
  */
 
 /**
- * Chropoch core.
+ * Topp Chropoch Temporal Spawn creates temporals.
  */
 module com.yelstream.topp.chropoch.temporal.spawn {
     requires static lombok;
