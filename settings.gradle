@@ -19,12 +19,12 @@
 
 rootProject.name = 'Yelstream Topp Chropoch Project'
 
-include 'Topp-Chropoch-Core-Library'  //Consider this!
-include 'Topp-Chropoch-Clock-Shape-Library'
-include 'Topp-Chropoch-Temporal-Spawn-Library'
-include 'Topp-Chropoch-Suspend-Spawn-Library'
-include 'Topp-Chropoch-Chronicle-Library'
-include 'Topp-Chropoch-Time-Source-Library'
-include 'Topp-Chropoch-Temporal-Config-Library'
-include 'Topp-Chropoch-Inject-Library'
+include 'module:Topp-Chropoch-Core-Library'  //Consider this!
+include 'module:Topp-Chropoch-Clock-Shape-Library'
+include 'module:Topp-Chropoch-Temporal-Spawn-Library'
+include 'module:Topp-Chropoch-Suspend-Spawn-Library'
+include 'module:Topp-Chropoch-Chronicle-Library'
+include 'module:Topp-Chropoch-Time-Source-Library'
+include 'module:Topp-Chropoch-Temporal-Config-Library'
+include 'module:Topp-Chropoch-Inject-Library'
 //include 'Topp-Chropoch-Duration-Watch-Library'  //TO-DO: Consider adding this!
